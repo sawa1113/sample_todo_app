@@ -50,6 +50,7 @@ gem "bootsnap", require: false
 gem 'rails-i18n'
 gem "bootstrap", "~> 5.3"
 gem "sassc-rails"
+gem 'pagy'
 group :development do
   gem 'rails_db', '~> 2.3'
 end
