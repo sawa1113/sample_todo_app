@@ -1,0 +1,32 @@
+<%= form_with model: todo, local: true do |form| %>
+  <% if todo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= t("errors.template.header", model: todo.model_name.human, count: todo.errors.count) %> </h2>
+
+      <ul>
+        <% todo.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+   <div>
+    <%= form.label :completed %><br>
+    <%= form.check_box :completed, {checked: false}, true, false %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
