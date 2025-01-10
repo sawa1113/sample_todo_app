@@ -1,6 +1,6 @@
 class TodosController < ApplicationController
   def index
-    @todos = Todo.all
+    @pagy, @todos = pagy(Todo.all, items: 10)
   end
 
   def show
