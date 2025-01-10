@@ -1,0 +1,16 @@
+ja:
+  hello: "こんにちは"
+  activerecord:
+    models:
+      todo: "タスク"
+    attributes:
+      todo:
+        title: "タイトル"
+        description: "説明"
+        completed: "タスクの状態"
+  errors:
+    messages:
+      blank: "を入力してください"
+  time:
+    formats:
+      default: "%Y年%m月%d日 %H:%M"
