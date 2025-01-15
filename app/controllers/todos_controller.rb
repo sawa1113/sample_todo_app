@@ -45,6 +45,17 @@ class TodosController < ApplicationController
     redirect_to todos_path, notice: 'Todoを削除しました。'
   end
 
+  #画像削除アクション
+  def remove_attachment
+    @todo = Todo.find(params[:id])
+
+    if @todo.remove_attachment
+      redirect_to @todo, notice: "添付ファイルが削除されました。"
+    else
+      redirect_to @todo, notice: "添付ファイルの削除に失敗しました。"
+    end
+  end
+
   private
 
   def todo_params
