@@ -11,6 +11,17 @@
 </p>
 
 <p>
+  <strong>添付ファイル:</strong>
+  <% if @todo.attachment.present? %>
+    <%= link_to image_tag(@todo.attachment.url(:thumb)), @todo.attachment.url, target: "_blank" %>
+    <br>
+    <%= button_to '画像を削除', remove_attachment_todo_path(@todo), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+  <% else %>
+    画像はありません。
+  <% end %>
+</p>
+
+<p>
   <strong>タスクの状態:</strong>
   <%= @todo.completed? ? "完了" : "未完了" %>
 </p>
