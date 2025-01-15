@@ -51,6 +51,8 @@ gem 'rails-i18n'
 gem "bootstrap", "~> 5.3"
 gem "sassc-rails"
 gem 'pagy'
+gem 'carrierwave', '~> 2.2'
+gem 'mini_magick', '~> 4.11'
 group :development do
   gem 'rails_db', '~> 2.3'
 end

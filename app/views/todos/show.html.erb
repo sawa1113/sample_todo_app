@@ -11,6 +11,15 @@
 </p>
 
 <p>
+  <strong>添付ファイル:</strong>
+  <% if @todo.attachment.present? %>
+    <%= link_to @todo.attachment.url, target: "_blank" do %>
+      <%= image_tag @todo.attachment.url(:thumb), alt: "添付ファイルのサムネイル" %>
+    <% end %>
+  <% end %>
+</p>
+
+<p>
   <strong>タスクの状態:</strong>
   <%= @todo.completed? ? "完了" : "未完了" %>
 </p>

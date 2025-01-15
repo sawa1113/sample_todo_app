@@ -8,6 +8,7 @@ ja:
         title: "タイトル"
         description: "説明"
         completed: "タスクの状態"
+        attachment: "添付ファイル"
   errors:
     messages:
       blank: "を入力してください"

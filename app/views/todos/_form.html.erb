@@ -21,6 +21,11 @@
     <%= form.text_area :description %>
   </div>
 
+    <div>
+    <%= form.label :attachment %>
+    <%= form.file_field :attachment %>
+  </div>
+
    <div>
     <%= form.label :completed %><br>
     <%= form.check_box :completed %>
