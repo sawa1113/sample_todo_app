@@ -48,11 +48,13 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 gem 'rails-i18n'
+gem 'devise-i18n-views'
 gem "bootstrap", "~> 5.3"
 gem "sassc-rails"
 gem 'pagy'
 gem 'carrierwave', '~> 2.2'
 gem 'mini_magick', '~> 4.11'
+gem 'devise'
 group :development do
   gem 'rails_db', '~> 2.3'
 end
