@@ -1,7 +1,6 @@
 class TodosController < ApplicationController
   before_action :authenticate_user! # ログインしていない場合アクセス不可
   before_action :set_todo, only: %i[show edit update destroy]
-  before_action :authorize_user, only: %i[edit update destroy remove_attachment]
 
   # CanCanCanによる権限管理を適用
   load_and_authorize_resource except: :index
@@ -59,10 +58,6 @@ class TodosController < ApplicationController
 
   def set_todo
     @todo = Todo.find(params[:id])
-  end
-
-  def authorize_user
-    redirect_to todos_path, alert: '権限がありません。' unless @todo.user == current_user
   end
 
   def todo_params
