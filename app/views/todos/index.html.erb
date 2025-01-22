@@ -34,3 +34,5 @@
 <%== pagy_nav(@pagy, link_extra: 'class="border bg-white p-1 rounded"') %>
 
 <%= link_to '新規作成', new_todo_path %>
+
+<%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" } %>
