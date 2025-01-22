@@ -24,7 +24,9 @@
           <%= link_to '詳細', todo %>
           <%= link_to '編集', edit_todo_path(todo) %>
 
-          <%= link_to '削除', todo, method: :delete, data: { turbo: false, confirm: '削除してもいいですか?' } %>
+          <% if can?(:destroy, todo) %>
+            <%= link_to '削除', todo, method: :delete, data: { turbo: false, confirm: '削除してもいいですか?' } %>
+          <% end %>
         </td>
       </tr>
     <% end %>

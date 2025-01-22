@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :Confirmable
 
   has_many :todos, dependent: :destroy
+
+  ROLES = %w[user admin].freeze
+
+  validates :role, inclusion: { in: ROLES }
 end

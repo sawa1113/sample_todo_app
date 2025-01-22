@@ -3,8 +3,11 @@ class TodosController < ApplicationController
   before_action :set_todo, only: %i[show edit update destroy]
   before_action :authorize_user, only: %i[edit update destroy remove_attachment]
 
+  # CanCanCanによる権限管理を適用
+  load_and_authorize_resource except: :index
+
   def index
-    @pagy, @todos = pagy(current_user.todos, items: 10) # ログインユーザーのタスクのみ
+    @pagy, @todos = pagy(current_user.todos.accessible_by(current_ability), items: 10) # ログインユーザーのタスクのみ
   end
 
   def show
