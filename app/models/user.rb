@@ -9,4 +9,8 @@ class User < ApplicationRecord
   ROLES = %w[user admin].freeze
 
   validates :role, inclusion: { in: ROLES }
+  # validates :name, presence: true
+  # validates :profile, length: { maximum: 200 }
+
+  attr_accessor :current_password
 end
