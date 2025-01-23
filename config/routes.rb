@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # Todo画面をトップページに設定
-  root "todos#index"
+  root "users#show"
 
   # Deviseルート
   devise_for :users, controllers: {
@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     passwords: "users/passwords",
     confirmations: "users/confirmations"
   }
+  get 'users/show' => "users#show"
 
   # Rails DBエンジン
   mount RailsDb::Engine => "/rails/db", as: 'custom_rails_db'
