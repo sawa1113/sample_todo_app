@@ -1,9 +1,9 @@
 class TodosController < ApplicationController
-  before_action :authenticate_user! # ログインしていない場合アクセス不可
+  before_action :authenticate_user!, only: [:index, :create, :update, :destroy, :remove_attachment]
   before_action :set_todo, only: %i[show edit update destroy]
 
   # CanCanCanによる権限管理を適用
-  load_and_authorize_resource except: :index
+  load_and_authorize_resource
 
   def index
     @pagy, @todos = pagy(current_user.todos.accessible_by(current_ability), items: 10) # ログインユーザーのタスクのみ

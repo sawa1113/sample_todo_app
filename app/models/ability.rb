@@ -12,6 +12,9 @@ class Ability
       # 通常ユーザーは自分のタスクだけ操作が可能
       can [:read, :create, :update], Todo, user_id: user.id
       cannot :destroy, Todo # 削除は許可をしない
+
+      # indexアクションに対するアクセス許可
+      can :read, Todo, user_id: user.id
     end
   end
 end
